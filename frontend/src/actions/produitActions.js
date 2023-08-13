@@ -23,7 +23,7 @@ export const getProduits = ( keyword = '', currentPage = 1, price, category, rat
         }
 
         const { data } = await axios.get(link);
-        console.log('DATA : '+{data});
+        //console.log('DATA : '+{data});
         
         dispatch({ 
             type: ALL_PRODUITS_SUCCESS,

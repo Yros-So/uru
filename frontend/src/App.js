@@ -17,6 +17,8 @@ import ProtectedRoute from './components/route/ProtectedRoute';
 import { loadUser } from './actions/userActions';
 import UpdateProfile from './components/user/UpdateProfile';
 import UpdatePassword from './components/user/UpdatePassword';
+import ForgotPassword from './components/user/ForgotPassword';
+import NewPassword from './components/user/NewPassword';
 import store from './store';
 
 
@@ -37,12 +39,25 @@ function App() {
             <Route exact path="/produit/:id" element={<ProduitDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-           <Route path="/me" element={<Profile/>} />
-           <Route path="/me/update" element={<UpdateProfile/>} />
-           <Route path="/password/update" element={<UpdatePassword/>} />
-           <Route path="/me" Component={<ProtectedRoute/>} />
-           <Route path="/me/update" Component={<ProtectedRoute/>} />
-           <Route path="/password/update" Component={<ProtectedRoute/>} />
+            <Route path="/password/forgot" element={<ForgotPassword />} />
+            //Profile
+           <Route path="/me" element={
+           <ProtectedRoute> 
+              <Profile/>
+           </ProtectedRoute>
+           }/>
+           //Update Profile
+          <Route path="/me/update" element={
+           <ProtectedRoute> 
+              <UpdateProfile />
+           </ProtectedRoute>
+          }/>
+          //Update Password
+          <Route path="/password/update" element={
+           <ProtectedRoute> 
+              <UpdatePassword />
+           </ProtectedRoute>
+           }/>
         </Routes>
         </div>    
         <Footer />

@@ -18,8 +18,6 @@ const UpdatePassword = () => {
     const dispatch = useDispatch();
 
     const { error, isUpdated, loading } = useSelector(state => state.user)
-    
-    const { user } = useSelector(state => state.auth);
 
     useEffect(() => {
 
@@ -27,11 +25,7 @@ const UpdatePassword = () => {
             alert.error(error);
             dispatch(clearErrors());
         }
-        if(user !== null ){
-            
-        }else{
-            history('/login')
-        }
+
         if (isUpdated) {
             alert.success('Password updated successfully')
 
@@ -60,8 +54,7 @@ const UpdatePassword = () => {
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                <p hidden> { user !== null ? user
-                                 : console.log('Connect toi')} </p>
+                {/* <p hidden> { user !== null ? "" : console.log('Connect toi')} </p> */}
                     <form className="shadow-lg" onSubmit={submitHandler}>
                         <h1 className="mt-2 mb-5">Update Password</h1>
                         <div className="form-group">

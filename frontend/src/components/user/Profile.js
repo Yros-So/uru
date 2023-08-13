@@ -8,7 +8,6 @@ import MetaData from '../layout/MetaData'
 const Profile = () => {
 
     const { user, loading } = useSelector(state => state.auth)
-    console.log(' Profile Class Parle ')
     const  goto = useNavigate();
 
     return (
@@ -22,8 +21,8 @@ const Profile = () => {
                         <div className="col-12 col-md-3">
                             <figure className='avatar avatar-profile'>
                                 <img className="rounded-circle img-fluid" src={ user !== null ? user.avatar && user.avatar.url
-                                 : goto('/login') } alt={ user !== null ? user && user.name
-                                 : console.log('Connect toi') } />
+                                 : "" } alt={ user !== null ? user && user.name
+                                 : "" } />
                             </figure>
                             <Link to="/me/update" id="edit_profile" className="btn btn-primary btn-block my-5">
                                 Edit Profile
@@ -33,18 +32,18 @@ const Profile = () => {
                         <div className="col-12 col-md-5">
                             <h4>Full Name</h4>
                             <p>{ user !== null ? user && user.name
-                                 : console.log('Connect toi')}</p>
+                                 : ""}</p>
 
                             <h4>Email Address</h4>
                             <p>{user !== null ? user && user.email
-                                 : console.log('Connect toi')}</p>
+                                 : ""}</p>
 
                             <h4>Joined On</h4>
                             <p>{String(user !== null ? user && user.createdAt
-                                 : console.log('Connect toi')).substring(0, 10)}</p>
+                                 : "").substring(0, 10)}</p>
 
                             {user !== null ? user && user.role
-                                 : console.log('Connect toi') !== 'admin' && (
+                                 : "" !== 'admin' && (
                                 <Link to="/orders/me" className="btn btn-danger btn-block mt-5">
                                     My Orders
                                 </Link>

@@ -24,16 +24,11 @@ const UpdateProfile = () => {
 
     useEffect(() => {
 
-        if(loading === false && isAuthenticated === false){
-            history('/login')
-        }
-
-        if (user !== null) {
+    
+        if (user) {
             setName(user.name);
             setEmail(user.email);
-            setAvatarPreview(user.avatar && user.avatar.url)
-        }else{
-            history('/login')
+            setAvatarPreview(user.avatar.url)
         }
 
         if (error) {
@@ -84,8 +79,7 @@ const UpdateProfile = () => {
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
-                <p hidden> { user !== null ? user
-                                 : console.log('Connect toi')} </p>
+                  {/* <p hidden> { user !== null ? "" : console.log('Connect toi')} </p> */}
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
                         <h1 className="mt-2 mb-5">Update Profile</h1>
 
