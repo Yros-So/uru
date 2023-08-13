@@ -19,7 +19,7 @@ const Header = () => {
     
     const { user, loading } = useSelector(state => state.auth)
 
-    const  history = useNavigate(); 
+    const  history = useNavigate();
     const [keyword, setKeyword] = useState('');
     //console.log('history Search : '+history)
 
