@@ -66,8 +66,6 @@ const Home = ({match}) => {
 
     if(keyword){
         count = filteredProductsCount;
-        //console.log('Compter : '+count);
-        //console.log('Produits Compter : '+produitsCount);
     }
 
 return (
