@@ -29,7 +29,7 @@ const UpdatePassword = () => {
         if (isUpdated) {
             alert.success('Password updated successfully')
 
-            history('/me')
+            history('/');
 
             dispatch({
                 type: UPDATE_PASSWORD_RESET
@@ -50,7 +50,7 @@ const UpdatePassword = () => {
 
     return (
         <Fragment>
-            <MetaData title={'Change Password'} />
+            <MetaData title={"Change Password"} />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
@@ -58,7 +58,7 @@ const UpdatePassword = () => {
                     <form className="shadow-lg" onSubmit={submitHandler}>
                         <h1 className="mt-2 mb-5">Update Password</h1>
                         <div className="form-group">
-                            <label for="old_password_field">Old Password</label>
+                            <label htmlFor="old_password_field">Old Password</label>
                             <input
                                 type="password"
                                 id="old_password_field"

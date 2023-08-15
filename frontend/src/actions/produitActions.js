@@ -58,6 +58,8 @@ export const getProduitDetails = (id) => async (dispatch) => {
     }
 }
 
+
+
 // Clear Errorrs
 export const clearErrors = () => async (dispatch) => {
     dispatch({

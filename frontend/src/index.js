@@ -10,7 +10,7 @@ import AlertTemplate from 'react-alert-template-basic';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import Popper from 'popper.js';
+
 
 const options= {
   timeOut: 5000,

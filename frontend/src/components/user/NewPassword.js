@@ -9,7 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 const NewPassword = ({match}) => {
 
-    const parameter = useParams(match);
+    const { token } = useParams({match});
     const history = useNavigate();
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -28,8 +28,6 @@ const NewPassword = ({match}) => {
 
         if (success) {
             alert.success('Password updated successfully')
-            history('/')
-        }else{
             history('/login')
         }
 
@@ -42,7 +40,7 @@ const NewPassword = ({match}) => {
         formData.set('password', password);
         formData.set('confirmPassword', confirmPassword);
 
-        dispatch(resetPassword(parameter.token, formData))
+        dispatch(resetPassword(token, formData))
     }
 
     return (
